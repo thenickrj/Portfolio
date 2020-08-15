@@ -124,10 +124,10 @@
         }
 
         .nav-options {
-            display: grid;
-            grid-template-columns: 30px;
-            padding: 30px;
-            gap: 113px;
+            position: absolute;
+            width: 55%;
+            height: 100%;
+            background-color: #4b5054;
         }
 
         .ic {
@@ -154,57 +154,15 @@
             left: 40%;
         }
 
-        @media (max-width: 600px) {
-            .nav-options {
-                position: absolute;
-                width: 100%;
-            }
+        .nav-right {
+            position: absolute;
+            right: 0;
+            width: 45%;
+            height: 100%;
+            background-color: white;
         }
-    </style>
-    <span class="menu-btn navbut" id="but" style="background-color: black; z-index: 670;">
-        <span class="menu-btn__burger"></span>
-    </span>
-    <nav style="font-style: italic;" id="navbar">
-        <div style="
-          position: absolute;
-          width: 55%;
-          height: 100%;
-          background-color: #4b5054;
-        ">
-            <div class="nav-options">
-                <div class="flexs">
-                    <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
-                        <img class="ic" src="icons/gmail.png" alt="" srcset="">
-                    </a>
-                    <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
-                        <img class="ic" src="icons/linkedin.png" alt="" srcset="">
-                    </a>
-                    <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
-                        <img class="ic" src="icons/github.png" alt="" srcset="">
-                    </a>
-                    <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
-                        <img class="ic" src="icons/instagram-sketched.png" alt="" srcset="">
-                    </a>
-                    <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
-                        <img class="ic" src="icons/codepen.png" alt="" srcset="">
-                    </a>
-                    <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
-                        <img class="ic" src="icons/twitter.png" alt="" srcset="">
-                    </a>
-                </div>
 
-
-
-            </div>
-        </div>
-        <div style="
-          position: absolute;
-          right: 0;
-          width: 45%;
-          height: 100%;
-          background-color: white;
-        " class="shrink">
-            <img src="https://images5.alphacoders.com/904/thumb-350-904443.png" alt="" srcset="" style="
+        .profile-pic {
             position: relative;
             border-radius: 100%;
             height: 287px;
@@ -212,7 +170,56 @@
             align-items: center;
             left: 25%;
             right: 50%;
-          " />
+        }
+
+        @media (max-width: 600px) {
+            .nav-options {
+                position: relative;
+                width: 100%;
+            }
+
+            .nav-right {
+                position: relative;
+                display: none;
+            }
+
+            .flexs {
+                position: absolute;
+                display: flex;
+                margin: 10px 0px;
+                bottom: 8%;
+                left: -4%;
+            }
+        }
+    </style>
+    <span class="menu-btn navbut" id="but" style="background-color: black; z-index: 670;">
+        <span class="menu-btn__burger"></span>
+    </span>
+    <nav style="font-style: italic;" id="navbar">
+        <div class="nav-options">
+            <div class="flexs">
+                <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
+                    <img class="ic" src="icons/gmail.png" alt="" srcset="">
+                </a>
+                <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
+                    <img class="ic" src="icons/linkedin.png" alt="" srcset="">
+                </a>
+                <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
+                    <img class="ic" src="icons/github.png" alt="" srcset="">
+                </a>
+                <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
+                    <img class="ic" src="icons/instagram-sketched.png" alt="" srcset="">
+                </a>
+                <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
+                    <img class="ic" src="icons/codepen.png" alt="" srcset="">
+                </a>
+                <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
+                    <img class="ic" src="icons/twitter.png" alt="" srcset="">
+                </a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <img src="https://images5.alphacoders.com/904/thumb-350-904443.png" alt="" srcset="" />
         </div>
     </nav>
 
