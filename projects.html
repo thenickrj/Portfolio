@@ -28,10 +28,7 @@
         *::-webkit-scrollbar-thumb {
             background-color: #fc6454;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+
         .menu-btn {
             position: relative;
             display: flex;
@@ -409,6 +406,14 @@
             right: 50%;
         }
 
+        .footer_right_text {
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+            top: 60px;
+            font-size: 15px;
+        }
+
         @media (max-width: 600px) {
             .container {
                 position: relative;
@@ -442,7 +447,8 @@
 
         @media (max-width: 600px) {
             footer {
-                width: 180%;
+                position: relative;
+                width: 100%;
             }
 
             .nav-options {
@@ -495,6 +501,25 @@
             .dam {
                 width: 100%;
                 height: 650px;
+            }
+
+            .footer_right_text {
+                color: white;
+                font-family: 'Courier New', Courier, monospace;
+                position: relative;
+                width: 70%;
+                top: 60px;
+                font-size: 12px;
+            }
+
+            .contact-footer {
+                color: white;
+                font-family: 'Courier New', Courier, monospace;
+                position: relative;
+                width: 50%;
+                left: 2%;
+                top: 84px;
+                font-size: 12px;
             }
 
         }
@@ -639,8 +664,7 @@
         </div>
 
         <footer>
-            <div
-                style="color:white;font-family: 'Courier New', Courier, monospace;position: relative;top:60px;font-size: 25px;">
+            <div class="footer_right_text">
                 <h2> &nbsp; Design & Developed By Nikhil Singh</h2>
                 <p> &nbsp; &nbsp;thenickrj©</p>
             </div>
