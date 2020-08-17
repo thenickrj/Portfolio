@@ -62,10 +62,7 @@
             box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
             transition: all 0.5s ease-in-out;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+
         .menu-btn__burger::before {
             transform: translateY(-16px);
         }
@@ -371,9 +368,19 @@
             right: 50%;
         }
 
+        .footer_right_text {
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+            width: 70%;
+            top: 60px;
+            font-size: 10px;
+
+        }
+
         @media (max-width: 600px) {
             footer {
-                width: 180%;
+                width: 100%;
             }
 
             .nav-options {
@@ -408,6 +415,36 @@
                 left: 35%;
             }
 
+            .resume {
+                position: relative;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+                top: 115px;
+                border-bottom: #272727;
+                border-style: ridge;
+                box-shadow: blueviolet;
+            }
+
+            .footer_right_text {
+                color: white;
+                font-family: 'Courier New', Courier, monospace;
+                position: relative;
+                width: 70%;
+                top: 60px;
+                font-size: 10px;
+            }
+
+            .contact-footer {
+                color: white;
+                font-family: 'Courier New', Courier, monospace;
+                position: relative;
+                width: 50%;
+                left: 2%;
+                top: 84px;
+                font-size: 12px;
+            }
         }
     </style>
     <span class="menu-btn navbut" id="but" style="background-color: black; z-index: 670;">
@@ -460,8 +497,7 @@
         <br><br><br><br>
         <br><br>
         <footer>
-            <div
-                style="color:white;font-family: 'Courier New', Courier, monospace;position: relative;top:60px;font-size: 15px;">
+            <div class="footer_right_text">
                 <h2> &nbsp; Design & Developed By Nikhil Singh</h2>
                 <p> &nbsp; &nbsp;thenickrj©</p>
             </div>
