@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image\jpeg" href="images/fav.png">
+
+    <title>Nikhil Singh</title>
+    <script src="js/jquery.js"></script>
+
+</head>
+
+<body>
+    <style>
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #fc6454 #e6e9ed;
+        }
+
+        *::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: #e6e9ed;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #fc6454;
+        }
+
+        .menu-btn {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+            /* border: 3px solid #fff; */
+        }
+
+        .menu-btn__burger {
+            width: 50px;
+            height: 6px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .menu-btn__burger::before,
+        .menu-btn__burger::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 6px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .menu-btn__burger::before {
+            transform: translateY(-16px);
+        }
+
+        .menu-btn__burger::after {
+            transform: translateY(16px);
+        }
+
+        /* ANIMATION */
+        .menu-btn.open .menu-btn__burger {
+            transform: translateX(-50px);
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .menu-btn.open .menu-btn__burger::before {
+            transform: rotate(45deg) translate(35px, -35px);
+        }
+
+        .menu-btn.open .menu-btn__burger::after {
+            transform: rotate(-45deg) translate(35px, 35px);
+        }
+
+        nav {
+            display: none;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: #272727;
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            left: 0;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-option:hover {
+            position: relative;
+            left: 20px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .navbut {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
+
+        #but:active {
+            background-color: blue;
+        }
+
+        .closecolor {
+            background-color: rgb(163, 4, 4);
+        }
+
+        .nav-options {
+            position: absolute;
+            width: 55%;
+            height: 100%;
+            background-color: black;
+        }
+
+        .ic {
+            position: relative;
+            width: 30px;
+            margin: 0 26px;
+
+        }
+
+        .d {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            padding: 20%;
+
+            width: 30px;
+            height: 20px;
+        }
+
+        .nav_flexs {
+            position: absolute;
+            display: flex;
+            bottom: 9%;
+            left: 40%;
+        }
+
+        .nav-right {
+            position: absolute;
+            right: 0;
+            width: 45%;
+            height: 100%;
+            background-color: white;
+        }
+
+        .profile-pic {
+            position: relative;
+            border-radius: 100%;
+            height: 287px;
+            width: 350px;
+            align-items: center;
+            left: 25%;
+            right: 50%;
+        }
+
+        .headings {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            display: grid;
+            grid-template-columns: 100px;
+            padding: 30px;
+            gap: 35px;
+            gap: 68px;
+        }
+
+        .list {
+            list-style-type: none;
+            padding: 40px;
+            margin: 10px 0px;
+            column-gap: 40px;
+            list-style-type: disc;
+        }
+
+        .navs {
+            font-family: Arial Black;
+            font-size: 33px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .navs:hover {
+            position: relative;
+            color: black;
+            font-size: 33px;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: white;
+            left: 15%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav_me {
+            position: relative;
+            border-radius: 100%;
+            height: 350px;
+            width: 350px;
+            align-items: center;
+            left: 25%;
+            right: 50%;
+        }
+
+        /*about Css*/
+
+        .name_big {
+            position: relative;
+            font-family: 'Courier New', Courier, monospace;
+            left: 10%;
+        }
+
+        .first_name {
+            font-size: 170px;
+        }
+
+        .second_name {
+            position: relative;
+            font-size: 170px;
+            left: 30%;
+            top: 10px;
+        }
+
+        .front_pic {
+            position: relative;
+            width: 500px;
+            height: 600px;
+        }
+
+        .flex {
+            position: relative;
+            display: flex;
+            padding: 5%;
+        }
+
+        .bio {
+            position: relative;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 30px;
+            margin: auto;
+            width: 60%;
+            text-align: center;
+            border: 3px solid #6c755e;
+            padding: 10px;
+        }
+
+        .break {
+            position: relative;
+            background-color: black;
+            width: 100%;
+            height: 15px;
+        }
+
+        /*Gallery Css*/
+
+        * {
+            margin: 0;
+        }
+
+        footer {
+            position: absolute;
+            width: 100%;
+            height: 280px;
+            /* Height of the footer */
+            background: red;
+        }
+
+        .contact-footer {
+            position: absolute;
+            left: 70%;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .footer_icon {
+            position: relative;
+            width: 30px;
+            margin: 0 26px;
+
+        }
+
+        .nav_flex {
+            position: relative;
+            display: flex;
+            top: 10px;
+        }
+
+        footer {
+            background-color: black;
+        }
+
+        .gal_bio {
+            position: relative;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 30px;
+            margin: auto;
+            width: 60%;
+            text-align: center;
+            border: 3px solid #6c755e;
+            padding: 10px;
+        }
+
+        @media (max-width: 600px) {
+            footer {
+                width: 180%;
+            }
+
+            .nav-options {
+                position: relative;
+                width: 100%;
+            }
+
+            .nav-right {
+                position: relative;
+                display: none;
+            }
+
+            .nav_flexs {
+                position: absolute;
+                display: flex;
+                margin: 10px 0px;
+                bottom: 5%;
+                left: -4%;
+            }
+
+            .headings {
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                display: grid;
+                grid-template-columns: 100px;
+                padding: 30px;
+                gap: 35px;
+            }
+
+            .ic {
+                position: relative;
+                width: 25px;
+                left: 35%;
+            }
+
+            .gal_res {
+                align-items: center;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+            }
+
+            .gal_res2 {
+                align-items: center;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .dam {
+                width: 100%;
+                height: 650px;
+            }
+
+        }
+    </style>
+    <span class="menu-btn navbut" id="but" style="background-color: black; z-index: 670;">
+        <span class="menu-btn__burger"></span>
+    </span>
+    <nav style="font-style: italic;" id="navbar">
+        <div class="nav-options">
+            <div class="headings">
+
+                <ul class="navs">
+                    <a class="navs" href="about_me.html">About Me</a>
+                </ul>
+                <ul class="navs">
+                    <a class="navs" href="projects.html">Projects</a>
+
+                </ul>
+                <ul class="navs">
+                    <a class="navs" href="resume.html">Resume</a>
+                </ul>
+                <ul class="navs">
+                    <a class="navs" href="gallery.html">Gallery & Blog</a>
+                </ul>
+            </div>
+            <div class="nav_flexs">
+                <a href="mailto:nikhilbangalor@gmail.com">
+                    <img class="ic" src="icons/gmail.png" alt="" srcset="">
+                </a>
+                <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
+                    <img class="ic" src="icons/linkedin.png" alt="" srcset="">
+                </a>
+                <a href="https://www.github.com/thenickrj">
+                    <img class="ic" src="icons/github.png" alt="" srcset="">
+                </a>
+                <a href="https://www.instagram.com/thenickrj">
+                    <img class="ic" src="icons/instagram-sketched.png" alt="" srcset="">
+                </a>
+                <a href="https://codepen.io/thenickrj">
+                    <img class="ic" src="icons/codepen.png" alt="" srcset="">
+                </a>
+                <a href="https://twitter.com/TheNick31">
+                    <img class="ic" src="icons/twitter.png" alt="" srcset="">
+                </a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <img src="images/nav_me.png" class="nav_me" alt="" srcset="" />
+        </div>
+    </nav>
+    <div id="except_nav">
+        <div class="flex">
+            <img class="front_pic" src="images/nikhil_main.jpg" alt="" srcset="">
+            <div class="name_big">
+                <div class="first_name">
+                    Nikhil
+                </div>
+                <div class="second_name">
+                    Singh
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="bio">My name is Nikhil.I live in Bangalore.A Person with strong passion for self-improvement and
+            persistently
+            motivated and to stay positive along the journey and try to enjoy every moment of it.I'm an aspiring
+            Full-Stack
+            Developer.I also have passion for Designing.I even write some times.</p>
+
+
+        <br>
+        <br>
+        <footer>
+            <div
+                style="color:white;font-family: 'Courier New', Courier, monospace;position: relative;top:60px;font-size: 15px;">
+                <h2> &nbsp; Design & Developed By Nikhil Singh</h2>
+                <p> &nbsp; &nbsp;thenickrj©</p>
+            </div>
+
+
+            <div class=" contact-footer">
+                <h2 style="color:white;">
+                    Contact Me:</h2>
+                <div class="nav_flex ">
+                    <a href=" mailto: nikhilbangalor@gmail.com">
+                        <img class="footer_icon" src="icons/gmail.png" alt="">
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
+                        <img class="footer_icon" src="icons/linkedin.png" alt="">
+                    </a>
+                    <a href="https://www.instagram.com/thenickrj">
+                        <img class="footer_icon" src="icons/instagram-sketched.png" alt="" srcset="">
+                    </a>
+
+                    <a href="https://twitter.com/TheNick31">
+                        <img class="footer_icon" src="icons/twitter.png" alt="" srcset="">
+                    </a>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+    </div>
+    <script>
+        const menuBtn = document.querySelector(".menu-btn");
+        let menuOpen = false;
+        menuBtn.addEventListener("click", () => {
+            if (!menuOpen) {
+                menuBtn.classList.add("open");
+                //   $("#but").css("background-color", "rgb(163, 4, 4)");
+                $("#except_nav").css("display", "none");
+                menuOpen = true;
+                $("#navbar").animate({ width: "toggle" }, 400);
+            } else {
+                menuBtn.classList.remove("open");
+                $("#except_nav").css("display", "block");
+
+                menuOpen = false;
+                $("#navbar").css("display", "none");
+            }
+        });
+    </script>
+</body>
+
+</html>

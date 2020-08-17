@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image\jpeg" href="images/fav.png">
+
+    <title>Nikhil Singh</title>
+
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <span class="menu-btn navbut" id="but" style="background-color: black; z-index: 670;">
+        <span class="menu-btn__burger"></span>
+    </span>
+    <nav style="font-style: italic;" id="navbar">
+        <div class="nav-options">
+            <div class="headings">
+                <ul class="navs">
+                    <a class="navs" href="about_me.html">About me</a>
+                </ul>
+                <ul class="navs">
+                    <a class="navs" href="projects.html">Projects</a>
+
+                </ul>
+                <ul class="navs">
+                    <a class="navs" href="resume.html">Resume</a>
+                </ul>
+                <ul class="navs">
+                    <a class="navs" href="resume.html">Gallery & Blog</a>
+                </ul>
+
+            </div>
+            <div class="nav_flexs">
+                <a href="mailto:nikhilbangalor@gmail.com">
+                    <img class="ic" src="icons/gmail.png" alt="" srcset="">
+                </a>
+                <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
+                    <img class="ic" src="icons/linkedin.png" alt="" srcset="">
+                </a>
+                <a href="https://www.github.com/thenickrj">
+                    <img class="ic" src="icons/github.png" alt="" srcset="">
+                </a>
+                <a href="https://www.instagram.com/thenickrj">
+                    <img class="ic" src="icons/instagram-sketched.png" alt="" srcset="">
+                </a>
+                <a href="https://codepen.io/thenickrj">
+                    <img class="ic" src="icons/codepen.png" alt="" srcset="">
+                </a>
+                <a href="https://twitter.com/TheNick31">
+                    <img class="ic" src="icons/twitter.png" alt="" srcset="">
+                </a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <img src="images/nav_me.png" class="nav_me" alt="" srcset="" />
+        </div>
+    </nav>
+    <div id="except_nav">
+
+        <div id="aboutme">
+            <div class="flex">
+                <img class="front_pic" src="images/nikhil_main.jpg" alt="" srcset="">
+                <div class="name_big">
+                    <div class="first_name">
+                        Nikhil
+                    </div>
+                    <div class="second_name">
+                        Singh
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="bio">My name is Nikhil.I live in Bangalore.A Person with strong passion for self-improvement and
+                persistently
+                motivated and to stay positive along the journey and try to enjoy every moment of it.I'm an aspiring
+                Full-Stack
+                Developer.I also have passion for Designing.I even write some times.</p>
+
+        </div>
+        <div class="break"></div>
+
+    </div>
+    <script>
+        const menuBtn = document.querySelector(".menu-btn");
+        let menuOpen = false;
+        menuBtn.addEventListener("click", () => {
+            if (!menuOpen) {
+                menuBtn.classList.add("open");
+                //   $("#but").css("background-color", "rgb(163, 4, 4)");
+                $("#except_nav").css("display", "none");
+                menuOpen = true;
+                $("#navbar").animate({ width: "toggle" }, 400);
+            } else {
+                menuBtn.classList.remove("open");
+                $("#except_nav").css("display", "block");
+                menuOpen = false;
+                $("#navbar").css("display", "none");
+            }
+        });
+    </script>
+</body>
+
+</html>
