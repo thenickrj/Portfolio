@@ -7,9 +7,8 @@
     <link rel="shortcut icon" type="image\jpeg" href="images/fav.png">
 
     <title>Nikhil Singh</title>
-
     <script src="js/jquery.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
+
 </head>
 
 <body>
@@ -31,27 +30,6 @@
             background-color: #fc6454;
         }
 
-        .clickable {
-            cursor: pointer;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            /* background: #272727; */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
         .menu-btn {
             position: relative;
             display: flex;
@@ -141,6 +119,10 @@
             background-color: blue;
         }
 
+        .closecolor {
+            background-color: rgb(163, 4, 4);
+        }
+
         .nav-options {
             position: absolute;
             width: 55%;
@@ -148,14 +130,21 @@
             background-color: black;
         }
 
-        a {
-            text-decoration: none;
-        }
-
         .ic {
             position: relative;
             width: 30px;
             margin: 0 26px;
+
+        }
+
+        .d {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            padding: 20%;
+
+            width: 30px;
+            height: 20px;
         }
 
         .nav_flexs {
@@ -173,13 +162,31 @@
             background-color: white;
         }
 
+        .profile-pic {
+            position: relative;
+            border-radius: 100%;
+            height: 287px;
+            width: 350px;
+            align-items: center;
+            left: 25%;
+            right: 50%;
+        }
+
         .headings {
-            font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             display: grid;
             grid-template-columns: 100px;
             padding: 30px;
             gap: 35px;
             gap: 68px;
+        }
+
+        .list {
+            list-style-type: none;
+            padding: 40px;
+            margin: 10px 0px;
+            column-gap: 40px;
+            list-style-type: disc;
         }
 
         .navs {
@@ -198,19 +205,25 @@
             left: 15%;
         }
 
+        a {
+            text-decoration: none;
+        }
+
         .nav_me {
             position: relative;
             border-radius: 100%;
-            height: 287px;
+            height: 350px;
             width: 350px;
             align-items: center;
             left: 25%;
             right: 50%;
         }
 
+        /*about Css*/
+
         .name_big {
             position: relative;
-            font-family: "Courier New", Courier, monospace;
+            font-family: 'Courier New', Courier, monospace;
             left: 10%;
         }
 
@@ -239,7 +252,7 @@
 
         .bio {
             position: relative;
-            font-family: "Courier New", Courier, monospace;
+            font-family: 'Courier New', Courier, monospace;
             font-size: 30px;
             margin: auto;
             width: 60%;
@@ -255,17 +268,78 @@
             height: 15px;
         }
 
-        .nav_me {
+        /*Gallery Css*/
+
+        * {
+            margin: 0;
+        }
+
+        footer {
+            position: absolute;
+            width: 100%;
+            height: 240px;
+            /* Height of the footer */
+            background: red;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .contact-footer {
+            position: absolute;
+            left: 70%;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .footer_icon {
             position: relative;
-            border-radius: 100%;
-            height: 350px;
-            width: 350px;
-            align-items: center;
-            left: 25%;
-            right: 50%;
+            width: 30px;
+            margin: 0 26px;
+
+        }
+
+        .nav_flex {
+            position: relative;
+            display: flex;
+            top: 10px;
+        }
+
+        footer {
+            background-color: black;
+        }
+
+        .gal_bio {
+            position: relative;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 30px;
+            margin: auto;
+            width: 60%;
+            text-align: center;
+            border: 3px solid #6c755e;
+            padding: 10px;
+        }
+
+        .name_big_mob {
+            display: none;
+        }
+
+        .footer_right_text {
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+            top: 60px;
+            font-size: 15px;
         }
 
         @media (max-width: 600px) {
+            footer {
+                position: relative;
+                width: 100%;
+                top: 190px;
+            }
+
             .nav-options {
                 position: relative;
                 width: 100%;
@@ -285,7 +359,7 @@
             }
 
             .headings {
-                font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                 display: grid;
                 grid-template-columns: 100px;
                 padding: 30px;
@@ -298,31 +372,87 @@
                 left: 35%;
             }
 
+            .gal_res {
+                align-items: center;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+            }
+
+            .gal_res2 {
+                align-items: center;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .dam {
+                width: 100%;
+                height: 650px;
+            }
+
             .front_pic {
                 position: relative;
                 display: block;
-                width: 70%;
                 margin: auto;
-                left: 8%;
+                top: 216px;
+                right: 50%;
+                width: 500px;
+                height: 600px;
             }
 
+            .name_big {
+                display: none;
+                width: 30%;
+            }
 
-            .bio {
+            .name_big_mob {
                 position: relative;
                 display: block;
-                font-family: "Courier New", Courier, monospace;
-                font-size: 30px;
-                margin: auto;
+                font-family: 'Courier New', Courier, monospace;
                 left: 10%;
-                width: 100%;
-                text-align: center;
-                border: 3px solid #6c755e;
-                padding: 10px;
             }
 
-            .break {
-                width: 200%;
+            .first_name_mob {
+                position: relative;
+                font-size: 60px;
+                top: 30px;
+                left: 17%;
             }
+
+            .second_name_mob {
+                position: relative;
+                font-size: 60px;
+                left: 47%;
+                top: 40px;
+            }
+
+            .bio {
+                display: block;
+                position: relative;
+                top: 200px;
+            }
+
+            .footer_right_text {
+                color: white;
+                font-family: 'Courier New', Courier, monospace;
+                position: relative;
+                width: 70%;
+                top: 60px;
+                font-size: 10px;
+            }
+        }
+
+        .contact-footer {
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+            width: 50%;
+            left: 2%;
+            top: 84px;
+            font-size: 12px;
+        }
         }
     </style>
     <span class="menu-btn navbut" id="but" style="background-color: black; z-index: 670;">
@@ -331,8 +461,9 @@
     <nav style="font-style: italic;" id="navbar">
         <div class="nav-options">
             <div class="headings">
+
                 <ul class="navs">
-                    <a class="navs" href="about_me.html">About me</a>
+                    <a class="navs" href="about_me.html">About Me</a>
                 </ul>
                 <ul class="navs">
                     <a class="navs" href="projects.html">Projects</a>
@@ -342,9 +473,8 @@
                     <a class="navs" href="resume.html">Resume</a>
                 </ul>
                 <ul class="navs">
-                    <a class="navs" href="resume.html">Gallery & Blog</a>
+                    <a class="navs" href="gallery.html">Gallery & Blog</a>
                 </ul>
-
             </div>
             <div class="nav_flexs">
                 <a href="mailto:nikhilbangalor@gmail.com">
@@ -372,32 +502,70 @@
         </div>
     </nav>
     <div id="except_nav">
-
-        <div id="aboutme">
-            <div class="flex">
-                <img class="front_pic" src="images/nikhil_main.jpg" alt="" srcset="">
-                <div class="name_big">
-                    <div class="first_name">
-                        Nikhil
-                    </div>
-                    <div class="second_name">
-                        Singh
-                    </div>
-
+        <div class="flex">
+            <div class="name_big_mob">
+                <div class="first_name_mob">
+                    Nikhil
+                </div>
+                <div class="second_name_mob">
+                    Singh
                 </div>
 
             </div>
 
-            <p class="bio">My name is Nikhil.I live in Bangalore.A Person with strong passion for self-improvement and
-                persistently
-                motivated and to stay positive along the journey and try to enjoy every moment of it.I'm an aspiring
-                Full-Stack
-                Developer.I also have passion for Designing.I even write some times.</p>
+            <img class="front_pic" src="images/nikhil_main.jpg" alt="" srcset="">
+            <div class="name_big">
+                <div class="first_name">
+                    Nikhil
+                </div>
+                <div class="second_name">
+                    Singh
+                </div>
+
+            </div>
 
         </div>
-        <br><br>
-        <div class="break"></div>
 
+        <p class="bio">My name is Nikhil.I live in Bangalore.A Person with strong passion for self-improvement and
+            persistently
+            motivated and to stay positive along the journey and try to enjoy every moment of it.I'm an aspiring
+            Full-Stack
+            Developer.I also have passion for Designing.I even write some times.</p>
+
+
+        <br>
+        <br>
+        <br><br>
+        <footer>
+            <div class="footer_right_text">
+                <h2> &nbsp; Design & Developed By Nikhil Singh</h2>
+                <p> &nbsp; &nbsp;thenickrj©</p>
+            </div>
+
+
+            <div class=" contact-footer">
+                <h2 style="color:white;">
+                    Contact Me:</h2>
+                <div class="nav_flex ">
+                    <a href=" mailto: nikhilbangalor@gmail.com">
+                        <img class="footer_icon" src="icons/gmail.png" alt="">
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/nikhil-singh-9190a416a/">
+                        <img class="footer_icon" src="icons/linkedin.png" alt="">
+                    </a>
+                    <a href="https://www.instagram.com/thenickrj">
+                        <img class="footer_icon" src="icons/instagram-sketched.png" alt="" srcset="">
+                    </a>
+
+                    <a href="https://twitter.com/TheNick31">
+                        <img class="footer_icon" src="icons/twitter.png" alt="" srcset="">
+                    </a>
+                </div>
+            </div>
+
+        </footer>
+    </div>
     </div>
     <script>
         const menuBtn = document.querySelector(".menu-btn");
@@ -412,6 +580,7 @@
             } else {
                 menuBtn.classList.remove("open");
                 $("#except_nav").css("display", "block");
+
                 menuOpen = false;
                 $("#navbar").css("display", "none");
             }
