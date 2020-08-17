@@ -13,6 +13,315 @@
 </head>
 
 <body>
+    <style>
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #fc6454 #e6e9ed;
+        }
+
+        *::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        *::-webkit-scrollbar-track {
+            background: #e6e9ed;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #fc6454;
+        }
+
+        .clickable {
+            cursor: pointer;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* background: #272727; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .menu-btn {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+            /* border: 3px solid #fff; */
+        }
+
+        .menu-btn__burger {
+            width: 50px;
+            height: 6px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .menu-btn__burger::before,
+        .menu-btn__burger::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 6px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .menu-btn__burger::before {
+            transform: translateY(-16px);
+        }
+
+        .menu-btn__burger::after {
+            transform: translateY(16px);
+        }
+
+        /* ANIMATION */
+        .menu-btn.open .menu-btn__burger {
+            transform: translateX(-50px);
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .menu-btn.open .menu-btn__burger::before {
+            transform: rotate(45deg) translate(35px, -35px);
+        }
+
+        .menu-btn.open .menu-btn__burger::after {
+            transform: rotate(-45deg) translate(35px, 35px);
+        }
+
+        nav {
+            display: none;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: #272727;
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            left: 0;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-option:hover {
+            position: relative;
+            left: 20px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .navbut {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
+
+        #but:active {
+            background-color: blue;
+        }
+
+        .nav-options {
+            position: absolute;
+            width: 55%;
+            height: 100%;
+            background-color: black;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .ic {
+            position: relative;
+            width: 30px;
+            margin: 0 26px;
+        }
+
+        .nav_flexs {
+            position: absolute;
+            display: flex;
+            bottom: 9%;
+            left: 40%;
+        }
+
+        .nav-right {
+            position: absolute;
+            right: 0;
+            width: 45%;
+            height: 100%;
+            background-color: white;
+        }
+
+        .headings {
+            font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+            display: grid;
+            grid-template-columns: 100px;
+            padding: 30px;
+            gap: 35px;
+            gap: 68px;
+        }
+
+        .navs {
+            font-family: Arial Black;
+            font-size: 33px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .navs:hover {
+            position: relative;
+            color: black;
+            font-size: 33px;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: white;
+            left: 15%;
+        }
+
+        .nav_me {
+            position: relative;
+            border-radius: 100%;
+            height: 287px;
+            width: 350px;
+            align-items: center;
+            left: 25%;
+            right: 50%;
+        }
+
+        .name_big {
+            position: relative;
+            font-family: "Courier New", Courier, monospace;
+            left: 10%;
+        }
+
+        .first_name {
+            font-size: 170px;
+        }
+
+        .second_name {
+            position: relative;
+            font-size: 170px;
+            left: 30%;
+            top: 10px;
+        }
+
+        .front_pic {
+            position: relative;
+            width: 500px;
+            height: 600px;
+        }
+
+        .flex {
+            position: relative;
+            display: flex;
+            padding: 5%;
+        }
+
+        .bio {
+            position: relative;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 30px;
+            margin: auto;
+            width: 60%;
+            text-align: center;
+            border: 3px solid #6c755e;
+            padding: 10px;
+        }
+
+        .break {
+            position: relative;
+            background-color: black;
+            width: 100%;
+            height: 15px;
+        }
+
+        .nav_me {
+            position: relative;
+            border-radius: 100%;
+            height: 350px;
+            width: 350px;
+            align-items: center;
+            left: 25%;
+            right: 50%;
+        }
+
+        @media (max-width: 600px) {
+            .nav-options {
+                position: relative;
+                width: 100%;
+            }
+
+            .nav-right {
+                position: relative;
+                display: none;
+            }
+
+            .nav_flexs {
+                position: absolute;
+                display: flex;
+                margin: 10px 0px;
+                bottom: 5%;
+                left: -4%;
+            }
+
+            .headings {
+                font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+                display: grid;
+                grid-template-columns: 100px;
+                padding: 30px;
+                gap: 35px;
+            }
+
+            .ic {
+                position: relative;
+                width: 25px;
+                left: 35%;
+            }
+
+            .front_pic {
+                position: relative;
+                display: block;
+                width: 70%;
+                margin: auto;
+                left: 8%;
+            }
+
+
+            .bio {
+                position: relative;
+                display: block;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 30px;
+                margin: auto;
+                left: 10%;
+                width: 100%;
+                text-align: center;
+                border: 3px solid #6c755e;
+                padding: 10px;
+            }
+
+            .break {
+                width: 200%;
+            }
+        }
+    </style>
     <span class="menu-btn navbut" id="but" style="background-color: black; z-index: 670;">
         <span class="menu-btn__burger"></span>
     </span>
@@ -83,6 +392,7 @@
                 Developer.I also have passion for Designing.I even write some times.</p>
 
         </div>
+        <br><br>
         <div class="break"></div>
 
     </div>
