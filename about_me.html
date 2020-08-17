@@ -29,10 +29,7 @@
         *::-webkit-scrollbar-thumb {
             background-color: #fc6454;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+
         .menu-btn {
             position: relative;
             display: flex;
@@ -280,9 +277,14 @@
         footer {
             position: absolute;
             width: 100%;
-            height: 280px;
+            height: 240px;
             /* Height of the footer */
             background: red;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
         .contact-footer {
@@ -319,9 +321,23 @@
             padding: 10px;
         }
 
+        .name_big_mob {
+            display: none;
+        }
+
+        .footer_right_text {
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+            top: 60px;
+            font-size: 15px;
+        }
+
         @media (max-width: 600px) {
             footer {
-                width: 180%;
+                position: relative;
+                width: 100%;
+                top: 190px;
             }
 
             .nav-options {
@@ -376,6 +392,67 @@
                 height: 650px;
             }
 
+            .front_pic {
+                position: relative;
+                display: block;
+                margin: auto;
+                top: 216px;
+                right: 50%;
+                width: 500px;
+                height: 600px;
+            }
+
+            .name_big {
+                display: none;
+                width: 30%;
+            }
+
+            .name_big_mob {
+                position: relative;
+                display: block;
+                font-family: 'Courier New', Courier, monospace;
+                left: 10%;
+            }
+
+            .first_name_mob {
+                position: relative;
+                font-size: 60px;
+                top: 30px;
+                left: 17%;
+            }
+
+            .second_name_mob {
+                position: relative;
+                font-size: 60px;
+                left: 47%;
+                top: 40px;
+            }
+
+            .bio {
+                display: block;
+                position: relative;
+                top: 200px;
+            }
+
+            .footer_right_text {
+                color: white;
+                font-family: 'Courier New', Courier, monospace;
+                position: relative;
+                width: 70%;
+                top: 60px;
+                font-size: 10px;
+            }
+        }
+
+        .contact-footer {
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+            width: 50%;
+            left: 2%;
+            top: 84px;
+            font-size: 12px;
+        }
         }
     </style>
     <span class="menu-btn navbut" id="but" style="background-color: black; z-index: 670;">
@@ -426,6 +503,16 @@
     </nav>
     <div id="except_nav">
         <div class="flex">
+            <div class="name_big_mob">
+                <div class="first_name_mob">
+                    Nikhil
+                </div>
+                <div class="second_name_mob">
+                    Singh
+                </div>
+
+            </div>
+
             <img class="front_pic" src="images/nikhil_main.jpg" alt="" srcset="">
             <div class="name_big">
                 <div class="first_name">
@@ -448,9 +535,9 @@
 
         <br>
         <br>
+        <br><br>
         <footer>
-            <div
-                style="color:white;font-family: 'Courier New', Courier, monospace;position: relative;top:60px;font-size: 15px;">
+            <div class="footer_right_text">
                 <h2> &nbsp; Design & Developed By Nikhil Singh</h2>
                 <p> &nbsp; &nbsp;thenickrj©</p>
             </div>
