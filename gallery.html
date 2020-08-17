@@ -40,10 +40,7 @@
             transition: all 0.5s ease-in-out;
             /* border: 3px solid #fff; */
         }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+
         .menu-btn__burger {
             width: 50px;
             height: 6px;
@@ -224,8 +221,6 @@
             height: 608px;
             display: inline-block;
             background: url("images/gallery/dog1.png") no-repeat;
-
-
         }
 
         .dog:hover {
@@ -236,7 +231,7 @@
             position: relative;
             width: 800px;
             margin: auto;
-            left: 25%;
+            left: 45%;
             height: 900px;
             display: inline-block;
             background: url("images/gallery/damn1.png") no-repeat;
@@ -359,6 +354,11 @@
             background-color: black;
         }
 
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         .gal_bio {
             position: relative;
             font-family: 'Courier New', Courier, monospace;
@@ -370,9 +370,28 @@
             padding: 10px;
         }
 
+        .gal_flex {
+            position: relative;
+            width: 300px;
+            height: 690px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer_right_text {
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+            top: 60px;
+            font-size: 15px;
+        }
+
         @media (max-width: 600px) {
             footer {
-                width: 180%;
+                position: relative;
+                width: 100%;
+                top: 190px;
             }
 
             .nav-options {
@@ -423,10 +442,73 @@
             }
 
             .dam {
-                width: 100%;
-                height: 650px;
+                display: block;
+                max-width: 100%;
+                margin: auto;
+                left: 45%;
+                height: auto;
+                display: inline-block;
+                background: url("images/gallery/damn1.png") no-repeat;
+
+
             }
 
+            .gal_flex {
+                position: relative;
+                width: 145px;
+                height: 336px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .footer_right_text {
+                color: white;
+                font-family: 'Courier New', Courier, monospace;
+                position: relative;
+                width: 70%;
+                top: 60px;
+                font-size: 10px;
+            }
+
+            .contact-footer {
+                color: white;
+                font-family: 'Courier New', Courier, monospace;
+                position: relative;
+                width: 50%;
+                left: 2%;
+                top: 84px;
+                font-size: 9px;
+            }
+
+            .dog-size {
+                position: relative;
+                width: 457px;
+                height: 548px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .blog1 {
+                position: relative;
+                width: 319px;
+                height: 315px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                right: 10%;
+            }
+
+            .blog2 {
+                position: relative;
+                width: 319px;
+                height: 315px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                left: 10%;
+            }
         }
     </style>
     <span class="menu-btn navbut" id="but" style="background-color: black; z-index: 670;">
@@ -500,41 +582,24 @@ margin-right: auto;
         </div>
         <br><br>
         <div class="gal_res2" style="display: flex;padding:20px;gap: 10px;">
-            <img src="images/gallery/cloud.jpg" style="position:relative;width: 300px;height:690px;display: block;
-        margin-left: auto;
-        margin-right: auto;
-        " alt="" srcset="">
-            <img src="images/gallery/tree.jpg" style="position:relative;width: 300px;height:690px;display: block;
-         margin-left: auto;
-         margin-right: auto;
-         " alt="" srcset="">
-            <img src="images/gallery/walk.jpg" style="position:relative;width: 300px;height:690px;display: block;
-         margin-left: auto;
-         margin-right: auto;
-         " alt="" srcset="">
+            <img src="images/gallery/cloud.jpg" class="gal_flex" alt="" srcset="">
+            <img src="images/gallery/tree.jpg" class="gal_flex" alt="" srcset="">
+            <img src="images/gallery/walk.jpg" class="gal_flex" alt="" srcset="">
         </div>
         <br><br>
         <div style="display: flex;gap: 10px;border-style: double;">
 
-            <img src="images/gallery/bridge.jpg" style="position:relative;width: 300px;height:690px;display: block;
-         margin-left: auto;
-         margin-right: auto;
-         " alt="" srcset="">
-            <img src="images/gallery/leaf.jpg" style="position:relative;width: 300px;height:690px;display: block;
-         margin-left: auto;
-         margin-right: auto;
-         " alt="" srcset="">
-            <img src="images/gallery/hill.jpg" style="position:relative;width: 300px;height:690px;display: block;
-         margin-left: auto;
-         margin-right: auto;
-         " alt="" srcset="">
+            <img src="images/gallery/bridge.jpg" class="gal_flex" alt="" srcset="">
+            <img src="images/gallery/leaf.jpg" class="gal_flex" alt="" srcset="">
+            <img src="images/gallery/hill.jpg" class="gal_flex" alt="" srcset="">
         </div>
         <br><br>
-        <div class="dog">
+
+
+        <div class="dog dog-size">
         </div>
         <div></div>
-        <div class="dam">
-        </div>
+
         <br><br>
         <div class="blog1">
             <img src="images/blog/intern.jpg" alt="" style="left:25%;width: 99%;">
@@ -556,8 +621,7 @@ margin-right: auto;
         </div> <br><br>
 
         <footer>
-            <div
-                style="color:white;font-family: 'Courier New', Courier, monospace;position: relative;top:60px;font-size: 15px;">
+            <div class="footer_right_text">
                 <h2> &nbsp; Design & Developed By Nikhil Singh</h2>
                 <p> &nbsp; &nbsp;thenickrj©</p>
             </div>
